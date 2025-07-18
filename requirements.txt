@@ -1,0 +1,7 @@
+pymupdf==1.23.7
+faiss-cpu
+sentence-transformers==2.2.2
+numpy
+scikit-learn
+transformers
+torch 
