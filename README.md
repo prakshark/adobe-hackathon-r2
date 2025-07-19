@@ -1,5 +1,5 @@
 
-# PDF Outline Extractor (Round 1A)
+# PDF Outline Extractor (Round 2)
 
 Extracts structured outlines (title, H1, H2, H3) from PDFs (max 50 pages), outputs as JSON, and runs fully offline in Docker.
 
