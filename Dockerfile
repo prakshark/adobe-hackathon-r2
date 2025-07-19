@@ -11,11 +11,12 @@ RUN apt-get update && \
 
 # Copy requirements and install Python dependencies
 COPY requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
+ENV PIP_REQUIRE_HASHES=0
+RUN pip install --default-timeout=1800 --no-cache-dir -r requirements.txt
 
 # Download the sentence-transformers model during build
-RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2').save('./models/all-MiniLM-L6-v2')"
+# RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2').save('./models/all-MiniLM-L6-v2')"
+COPY models/all-MiniLM-L6-v2 /app/models/all-MiniLM-L6-v2
 
 # Copy the application code
 COPY app/ .

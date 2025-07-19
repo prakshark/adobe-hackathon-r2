@@ -1,0 +1,22 @@
+# Ignore input and output data
+input/
+output/
+
+# Ignore model files (unless you want to COPY a specific model directory)
+# models/
+app/models/
+
+# Ignore cache and system files
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+Thumbs.db
+
+# Ignore other unnecessary files
+*.log
+*.tmp
+
+# If you want to include a specific model, comment out the models/ line above and only COPY the needed subfolder in your Dockerfile 

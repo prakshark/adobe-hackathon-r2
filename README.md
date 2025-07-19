@@ -1,3 +1,4 @@
+
 # PDF Outline Extractor (Round 1A)
 
 Extracts structured outlines (title, H1, H2, H3) from PDFs (max 50 pages), outputs as JSON, and runs fully offline in Docker.
@@ -9,9 +10,13 @@ Extracts structured outlines (title, H1, H2, H3) from PDFs (max 50 pages), outpu
 
 ## Usage
 
-### 1. Build Docker Image
+### 1(a). Build Docker Image
 ```sh
 docker build -t pdf-outline-extractor .
+```
+### 1(b). or pull the docker image from dockerhub
+```sh
+docker pull prakshark/pdf-semantic-search-adobe-hackathon-r2:teamcodecrib
 ```
 
 ### 2. Prepare Input/Output Folders
@@ -20,6 +25,7 @@ docker build -t pdf-outline-extractor .
 
 ### 3. Run the Container
 ```sh
+cd app
 docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output pdf-outline-extractor
 ```
 - Output JSONs will appear in `output/`
